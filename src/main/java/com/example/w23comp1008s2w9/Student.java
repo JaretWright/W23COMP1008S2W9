@@ -7,8 +7,8 @@ public class Student extends Person{
     private int studentNum;
     private ArrayList<Grade> grades;
 
-    public Student(String firstName, String lastName, String address, LocalDate birthday,
-                                                            int studentNum, ArrayList<Grade> grades) {
+    public Student(int studentNum, String firstName, String lastName, String address, LocalDate birthday
+                                                            , ArrayList<Grade> grades) {
         super(firstName, lastName, address, birthday);
         setStudentNum(studentNum);
         this.grades = grades;
@@ -19,8 +19,7 @@ public class Student extends Person{
      *  This second constructor is an "overloaded" constructor.  That means there are 2 constructors, but because they
      *  have a different set of arguments, the system can differentiate between them and use the appropriate one
      */
-    public Student(String firstName, String lastName, String address, LocalDate birthday,
-                   int studentNum) {
+    public Student( int studentNum,String firstName, String lastName, String address, LocalDate birthday) {
         super(firstName, lastName, address, birthday);
         setStudentNum(studentNum);
         this.grades = new ArrayList<>();
