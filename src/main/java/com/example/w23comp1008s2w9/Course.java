@@ -6,8 +6,8 @@ public class Course {
 
     public Course(int crn, String courseCode, String courseName) {
         setCrn(crn);
-        this.courseCode = courseCode;
-        this.courseName = courseName;
+        setCourseCode(courseCode);
+        setCourseName(courseName);
     }
 
     /**
@@ -34,7 +34,7 @@ public class Course {
         if (courseCode.matches(courseCodePattern))
             this.courseCode = courseCode;
         else
-            throw new IllegalArgumentException("Course code must have 4 letters a space and 4 digits (i.e. COMP 1008");
+            throw new IllegalArgumentException("Course code must have 4 letters a space and 4 digits (i.e. COMP 1008)");
     }
 
     /**
@@ -47,5 +47,22 @@ public class Course {
             this.courseName = courseName;
         else
             throw new IllegalArgumentException("course name must be 2 to 30 characters in length");
+    }
+
+    public int getCrn() {
+        return crn;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public String toString()
+    {
+        return String.format("%d-%s-%s",crn,courseCode,courseName);
     }
 }
